@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battle Cards 26</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ==================== شاشة تسجيل الدخول ==================== -->
+    <div id="login-screen" class="screen active">
+        <div class="login-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-futbol"></i>
+                </div>
+                <h1>Battle Cards 26</h1>
+                <p class="subtitle">لعبة كروت كرة القدم</p>
+            </div>
+            <div class="login-form">
+                <label for="teamNameInput">
+                    <i class="fas fa-users"></i> اسم التشكيلة:
+                </label>
+                <input type="text" id="teamNameInput" placeholder="اكتب اسم التشكيلة..." maxlength="30" autocomplete="off">
+                <button class="btn btn-primary btn-large" onclick="login()">
+                    <i class="fas fa-play"></i> ابدأ اللعب
+                </button>
+            </div>
+            <div class="login-info">
+                <p><i class="fas fa-info-circle"></i> اكتب اسم التشكيلة واضغط ابدأ</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== الشاشة الرئيسية ==================== -->
+    <div id="main-screen" class="screen">
+        <div class="main-container">
+            
+            <!-- الشريط العلوي -->
+            <div class="top-bar">
+                <div class="team-info">
+                    <span class="team-name" id="displayTeamName">
+                        <i class="fas fa-shield-alt"></i> Battle Cards 26
+                    </span>
+                    <span class="rank-badge" id="rankBadge">برونز 1</span>
+                </div>
+                <div class="resources">
+                    <div class="resource-item coins">
+                        <i class="fas fa-coins"></i>
+                        <span id="coinsDisplay">0</span>
+                    </div>
+                    <div class="resource-item boost">
+                        <i class="fas fa-bolt"></i>
+                        <span id="boostDisplay">0</span>
+                    </div>
+                    <div class="resource-item rank-points">
+                        <i class="fas fa-star"></i>
+                        <span id="rankPointsDisplay">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- التبويبات -->
+            <div class="nav-tabs" id="navTabs">
+                <button class="nav-tab active" onclick="switchTab('squad')">
+                    <i class="fas fa-futbol"></i> التشكيلة
+                </button>
+                <button class="nav-tab" onclick="switchTab('rank')">
+                    <i class="fas fa-trophy"></i> الرانك
+                </button>
+                <button class="nav-tab" onclick="switchTab('store')">
+                    <i class="fas fa-store"></i> المتجر
+                </button>
+                <button class="nav-tab" onclick="switchTab('club')">
+                    <i class="fas fa-archive"></i> النادي
+                </button>
+                <button class="nav-tab" onclick="switchTab('objectives')">
+                    <i class="fas fa-tasks"></i> الأهداف
+                </button>
+                <button class="nav-tab" onclick="switchTab('leaderboard')">
+                    <i class="fas fa-list-ol"></i> المتصدرين
+                </button>
+            </div>
+
+            <!-- محتوى التبويب -->
+            <div id="tab-content" class="tab-content"></div>
+
+        </div>
+    </div>
+
+    <!-- ==================== النافذة المنبثقة للاعب ==================== -->
+    <div class="modal-overlay" id="playerModal">
+        <div class="modal" id="playerModalContent"></div>
+    </div>
+
+    <!-- ==================== نافذة الماتش ==================== -->
+    <div class="modal-overlay" id="matchModal">
+        <div class="modal modal-large" id="matchModalContent"></div>
+    </div>
+
+    <!-- ==================== نافذة فتح الباك ==================== -->
+    <div class="modal-overlay" id="packModal">
+        <div class="modal" id="packModalContent"></div>
+    </div>
+
+    <!-- ==================== نافذة تأكيد ==================== -->
+    <div class="modal-overlay" id="confirmModal">
+        <div class="modal modal-small" id="confirmModalContent"></div>
+    </div>
+
+    <!-- ملفات الجافاسكربت -->
+    <script src="js/storage.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/match.js"></script>
+    <script src="js/rank.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/ui.js"></script>
+
+</body>
+</html>
